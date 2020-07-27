@@ -1,13 +1,13 @@
 {% set name = "pybamm" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.3.post1" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: "c778f23c3354594dd509423d50570d154bc16daa6e63c2631ec6492f3f7f6b31"
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 8ebc5767d199302b96478fb1e0435b6b666b43d6ee347d4dff61c0840f61d966
 
 build:
   number: 0
@@ -50,38 +50,36 @@ test:
     - pybamm.models.full_battery_models.lithium_ion
     - pybamm.models.submodels
     - pybamm.models.submodels.convection
+    - pybamm.models.submodels.convection.through_cell
+    - pybamm.models.submodels.convection.transverse
     - pybamm.models.submodels.current_collector
     - pybamm.models.submodels.electrode
     - pybamm.models.submodels.electrode.ohm
-    - pybamm.models.submodels.electrolyte
-    - pybamm.models.submodels.electrolyte.stefan_maxwell
-    - pybamm.models.submodels.electrolyte.stefan_maxwell.conductivity
-    - pybamm.models.submodels.electrolyte.stefan_maxwell.conductivity.surface_potential_form
-    - pybamm.models.submodels.electrolyte.stefan_maxwell.diffusion
+    - pybamm.models.submodels.electrolyte_conductivity
+    - pybamm.models.submodels.electrolyte_conductivity.surface_potential_form
+    - pybamm.models.submodels.electrolyte_diffusion
     - pybamm.models.submodels.external_circuit
     - pybamm.models.submodels.interface
-    - pybamm.models.submodels.interface.diffusion_limited
+    - pybamm.models.submodels.interface.first_order_kinetics
     - pybamm.models.submodels.interface.inverse_kinetics
     - pybamm.models.submodels.interface.kinetics
+    - pybamm.models.submodels.interface.sei
     - pybamm.models.submodels.oxygen_diffusion
     - pybamm.models.submodels.particle
-    - pybamm.models.submodels.particle.fast
-    - pybamm.models.submodels.particle.fickian
     - pybamm.models.submodels.porosity
     - pybamm.models.submodels.thermal
-    - pybamm.models.submodels.thermal.isothermal
-    - pybamm.models.submodels.thermal.x_full
-    - pybamm.models.submodels.thermal.x_lumped
-    - pybamm.models.submodels.thermal.xyz_lumped
+    - pybamm.models.submodels.thermal.pouch_cell
     - pybamm.models.submodels.tortuosity
     - pybamm.parameters
+    - pybamm.plotting
     - pybamm.solvers
     - pybamm.solvers.c_solvers
     - pybamm.spatial_methods
   commands:
     - pybamm_edit_parameter --help
     - pybamm_add_parameter --help
-    - pybamm_list_parameters --help
+    - pybamm_rm_parameter --help
+    - pybamm_install_odes --help
 
 about:
   home: "https://github.com/pybamm-team/PyBaMM"
