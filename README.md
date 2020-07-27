@@ -5,7 +5,7 @@ Home: https://github.com/pybamm-team/PyBaMM
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Python Battery Mathematical Modelling.
 
