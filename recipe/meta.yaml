@@ -78,7 +78,8 @@ test:
   commands:
     - pybamm_edit_parameter --help
     - pybamm_add_parameter --help
-    - pybamm_list_parameters --help
+    - pybamm_rm_parameter --help
+    - pybamm_install_odes --help
 
 about:
   home: "https://github.com/pybamm-team/PyBaMM"
