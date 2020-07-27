@@ -34,9 +34,6 @@ requirements:
     - python
     - scikit-fem >=0.2.0
     - scipy >=1.3
-    - jax >=0.1.68  # [not win]
-    - jaxlib >=0.1.47  # [not win]
-    - notebook
 
 test:
   imports:
