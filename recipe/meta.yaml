@@ -50,31 +50,28 @@ test:
     - pybamm.models.full_battery_models.lithium_ion
     - pybamm.models.submodels
     - pybamm.models.submodels.convection
+    - pybamm.models.submodels.convection.through_cell
+    - pybamm.models.submodels.convection.transverse
     - pybamm.models.submodels.current_collector
     - pybamm.models.submodels.electrode
     - pybamm.models.submodels.electrode.ohm
-    - pybamm.models.submodels.electrolyte
-    - pybamm.models.submodels.electrolyte.stefan_maxwell
-    - pybamm.models.submodels.electrolyte.stefan_maxwell.conductivity
-    - pybamm.models.submodels.electrolyte.stefan_maxwell.conductivity.surface_potential_form
-    - pybamm.models.submodels.electrolyte.stefan_maxwell.diffusion
+    - pybamm.models.submodels.electrolyte_conductivity
+    - pybamm.models.submodels.electrolyte_conductivity.surface_potential_form
+    - pybamm.models.submodels.electrolyte_diffusion
     - pybamm.models.submodels.external_circuit
     - pybamm.models.submodels.interface
-    - pybamm.models.submodels.interface.diffusion_limited
+    - pybamm.models.submodels.interface.first_order_kinetics
     - pybamm.models.submodels.interface.inverse_kinetics
     - pybamm.models.submodels.interface.kinetics
+    - pybamm.models.submodels.interface.sei
     - pybamm.models.submodels.oxygen_diffusion
     - pybamm.models.submodels.particle
-    - pybamm.models.submodels.particle.fast
-    - pybamm.models.submodels.particle.fickian
     - pybamm.models.submodels.porosity
     - pybamm.models.submodels.thermal
-    - pybamm.models.submodels.thermal.isothermal
-    - pybamm.models.submodels.thermal.x_full
-    - pybamm.models.submodels.thermal.x_lumped
-    - pybamm.models.submodels.thermal.xyz_lumped
+    - pybamm.models.submodels.thermal.pouch_cell
     - pybamm.models.submodels.tortuosity
     - pybamm.parameters
+    - pybamm.plotting
     - pybamm.solvers
     - pybamm.solvers.c_solvers
     - pybamm.spatial_methods
