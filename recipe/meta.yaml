@@ -17,8 +17,7 @@ build:
     - pybamm_list_parameters = pybamm.parameters_cli:list_parameters
     - pybamm_install_odes = pybamm.install_odes:main
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
-  skip: true  # [win]
-  skip: true  # [py<36]
+  skip: true  # [py<37]
 
 requirements:
   host:
