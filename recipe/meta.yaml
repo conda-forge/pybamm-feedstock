@@ -28,8 +28,8 @@ requirements:
     - anytree >=2.4.3
     - autograd >=1.2
     - casadi >=3.5.0
-    - jax ==0.2.12
-    - jaxlib ==0.1.70
+    - jax ==0.2.12  # [not osx]
+    - jaxlib ==0.1.70  # [not win]
     - jupyter
     - matplotlib-base >=2.0
     - numpy >=1.16
