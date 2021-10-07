@@ -14,26 +14,32 @@ build:
   entry_points:
     - pybamm_edit_parameter = pybamm.parameters_cli:edit_parameter
     - pybamm_add_parameter = pybamm.parameters_cli:add_parameter
-    - pybamm_list_parameters = pybamm.parameters_cli:list_parameters
+    - pybamm_rm_parameter = pybamm.parameters_cli:remove_parameter
+    - pybamm_install_odes = pybamm.install_odes:main
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
   skip: true  # [win]
-  skip: true  # [py<36]
+  skip: true  # [py<37]
 
 requirements:
   host:
     - pip
     - python
+    - wheel
   run:
     - anytree >=2.4.3
     - autograd >=1.2
     - casadi >=3.5.0
+    - jax ==0.2.12
+    - jaxlib ==0.1.70
     - jupyter
     - matplotlib-base >=2.0
     - numpy >=1.16
     - pandas >=0.24
+    - pybtex
     - python
     - scikit-fem >=0.2.0
     - scipy >=1.3
+    - sympy ==1.8
 
 test:
   imports:
