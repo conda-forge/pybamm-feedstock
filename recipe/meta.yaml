@@ -10,7 +10,7 @@ source:
   sha256: 8ebc5767d199302b96478fb1e0435b6b666b43d6ee347d4dff61c0840f61d966
 
 build:
-  number: 1
+  number: 2
   entry_points:
     - pybamm_edit_parameter = pybamm.parameters_cli:edit_parameter
     - pybamm_add_parameter = pybamm.parameters_cli:add_parameter
