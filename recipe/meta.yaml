@@ -1,5 +1,5 @@
 {% set name = "pybamm" %}
-{% set version = "0.2.3.post1" %}
+{% set version = "21.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,17 +7,17 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8ebc5767d199302b96478fb1e0435b6b666b43d6ee347d4dff61c0840f61d966
+  sha256: 2275d30e47a0c6ea74a60cafd5f3d69a501b914c1997d27470885056330347cc
 
 build:
-  number: 2
+  number: 0
   entry_points:
     - pybamm_edit_parameter = pybamm.parameters_cli:edit_parameter
     - pybamm_add_parameter = pybamm.parameters_cli:add_parameter
     - pybamm_list_parameters = pybamm.parameters_cli:list_parameters
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
-  skip: True  # [win]
-  skip: True  # [py<36]
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
+  skip: true  # [win]
+  skip: true  # [py<36]
 
 requirements:
   host:
@@ -82,13 +82,13 @@ test:
     - pybamm_install_odes --help
 
 about:
-  home: "https://github.com/pybamm-team/PyBaMM"
-  license: "BSD-3-Clause"
-  license_family: "BSD"
+  home: https://github.com/pybamm-team/PyBaMM
+  license: BSD-3-Clause
+  license_family: BSD
   license_file: LICENSE.txt
-  summary: "Python Battery Mathematical Modelling."
-  doc_url: "https://pybamm.readthedocs.io/en/latest"
-  dev_url: "https://github.com/pybamm-team/PyBaMM"
+  summary: Python Battery Mathematical Modelling.
+  doc_url: https://pybamm.readthedocs.io/en/latest
+  dev_url: https://github.com/pybamm-team/PyBaMM
 
 extra:
   recipe-maintainers:
