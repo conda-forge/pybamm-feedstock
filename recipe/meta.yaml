@@ -18,7 +18,7 @@ build:
     - pybamm_install_odes = pybamm.install_odes:main
     - pybamm_install_jax = pybamm.util:install_jax
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
-  skip: true  # [py<37 and py>=310]
+  skip: true  # [py<37 or py>=310]
 
 requirements:
   host:
