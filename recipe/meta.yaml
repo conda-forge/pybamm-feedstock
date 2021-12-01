@@ -85,7 +85,6 @@ test:
     - pybamm_add_parameter --help
     - pybamm_rm_parameter --help
     - pybamm_install_odes --help
-    - pybamm_install_jax --help
 
 about:
   home: https://github.com/pybamm-team/PyBaMM
