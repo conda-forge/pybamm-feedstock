@@ -1,5 +1,5 @@
 {% set name = "pybamm" %}
-{% set version = "21.11" %}
+{% set version = "21.12" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2275d30e47a0c6ea74a60cafd5f3d69a501b914c1997d27470885056330347cc
+  sha256: 032b5963125fdaf141e01c94686d77cc2072fca00386eec5625589b6ea0a1264
 
 build:
   number: 0
@@ -47,13 +47,16 @@ test:
     - pybamm.experiments
     - pybamm.expression_tree
     - pybamm.expression_tree.operations
+    - pybamm.expression_tree.printing
     - pybamm.geometry
     - pybamm.meshes
     - pybamm.models
     - pybamm.models.full_battery_models
     - pybamm.models.full_battery_models.lead_acid
     - pybamm.models.full_battery_models.lithium_ion
+    #- pybamm.models.full_battery_models.lithium_metal (next release)
     - pybamm.models.submodels
+    - pybamm.models.submodels.active_material
     - pybamm.models.submodels.convection
     - pybamm.models.submodels.convection.through_cell
     - pybamm.models.submodels.convection.transverse
@@ -65,12 +68,17 @@ test:
     - pybamm.models.submodels.electrolyte_diffusion
     - pybamm.models.submodels.external_circuit
     - pybamm.models.submodels.interface
-    - pybamm.models.submodels.interface.first_order_kinetics
-    - pybamm.models.submodels.interface.inverse_kinetics
+    - pybamm.models.submodels.interface.interface_utilisation
     - pybamm.models.submodels.interface.kinetics
+    - pybamm.models.submodels.interface.kinetics.first_order_kinetics
+    - pybamm.models.submodels.interface.kinetics.inverse_kinetics
+    - pybamm.models.submodels.interface.lithium_plating
     - pybamm.models.submodels.interface.sei
     - pybamm.models.submodels.oxygen_diffusion
     - pybamm.models.submodels.particle
+    - pybamm.models.submodels.particle.no_distribution
+    - pybamm.models.submodels.particle.size_distribution
+    - pybamm.models.submodels.particle_mechanics
     - pybamm.models.submodels.porosity
     - pybamm.models.submodels.thermal
     - pybamm.models.submodels.thermal.pouch_cell
@@ -85,6 +93,7 @@ test:
     - pybamm_add_parameter --help
     - pybamm_rm_parameter --help
     - pybamm_install_odes --help  # [not win]
+    #- pybamm_install_jax --help (next release)
 
 about:
   home: https://github.com/pybamm-team/PyBaMM
