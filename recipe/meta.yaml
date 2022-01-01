@@ -54,7 +54,7 @@ test:
     - pybamm.models.full_battery_models
     - pybamm.models.full_battery_models.lead_acid
     - pybamm.models.full_battery_models.lithium_ion
-    - pybamm.models.full_battery_models.lithium_metal
+    #- pybamm.models.full_battery_models.lithium_metal (next release)
     - pybamm.models.submodels
     - pybamm.models.submodels.active_material
     - pybamm.models.submodels.convection
@@ -72,7 +72,7 @@ test:
     - pybamm.models.submodels.interface.kinetics
     - pybamm.models.submodels.interface.kinetics.first_order_kinetics
     - pybamm.models.submodels.interface.kinetics.inverse_kinetics
-    - pybamm.models.submodels.interface.kinetics.lithium_plating
+    - pybamm.models.submodels.interface.lithium_plating
     - pybamm.models.submodels.interface.sei
     - pybamm.models.submodels.oxygen_diffusion
     - pybamm.models.submodels.particle
@@ -93,6 +93,7 @@ test:
     - pybamm_add_parameter --help
     - pybamm_rm_parameter --help
     - pybamm_install_odes --help  # [not win]
+    #- pybamm_install_jax --help (next release)
 
 about:
   home: https://github.com/pybamm-team/PyBaMM
