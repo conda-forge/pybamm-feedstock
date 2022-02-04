@@ -93,7 +93,7 @@ test:
     - pybamm_add_parameter --help
     - pybamm_rm_parameter --help
     - pybamm_install_odes --help  # [not win]
-    #- pybamm_install_jax --help (next release)
+    - pybamm_install_jax --help
 
 about:
   home: https://github.com/pybamm-team/PyBaMM
