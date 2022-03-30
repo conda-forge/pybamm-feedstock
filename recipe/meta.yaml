@@ -1,5 +1,5 @@
 {% set name = "pybamm" %}
-{% set version = "22.2" %}
+{% set version = "22.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b4983e3afa9e232a54d63a9b3c72380072c082f465c87c9c4abbab69148ae456
+  sha256: 9c20fd72ff27259c863297749fbed080432b4768293c587660c01b8afa51a676
 
 build:
   number: 0
@@ -82,7 +82,7 @@ test:
     - pybamm.models.submodels.porosity
     - pybamm.models.submodels.thermal
     - pybamm.models.submodels.thermal.pouch_cell
-    - pybamm.models.submodels.tortuosity
+    - pybamm.models.submodels.transport_efficiency
     - pybamm.parameters
     - pybamm.plotting
     - pybamm.solvers
