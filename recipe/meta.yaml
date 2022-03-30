@@ -82,7 +82,7 @@ test:
     - pybamm.models.submodels.porosity
     - pybamm.models.submodels.thermal
     - pybamm.models.submodels.thermal.pouch_cell
-    - pybamm.models.submodels.tortuosity
+    - pybamm.models.submodels.transport_efficiency
     - pybamm.parameters
     - pybamm.plotting
     - pybamm.solvers
