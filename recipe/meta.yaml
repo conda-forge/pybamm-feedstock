@@ -1,5 +1,5 @@
 {% set name = "pybamm" %}
-{% set version = "22.5" %}
+{% set version = "22.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5a9cfeeafe74eee9778dbba603e075df1c764dbac8f28edf7c19fd9ab2c48e5d
+  sha256: ee71cdaaa705a807d7b0009acd7e27794fc45f2719b6743fc37069c018158af1
 
 build:
   number: 0
@@ -33,7 +33,7 @@ requirements:
     - julia >=0.5.6  # [not win]
     - jupyter
     - matplotlib-base >=2.0
-    - numpy >=1.16
+    - numpy <=1.22  # change back to numpy>=1.16 once scikit.odes is fixed
     - pandas >=0.24
     - pybtex
     - python
@@ -55,7 +55,7 @@ test:
     - pybamm.models.full_battery_models
     - pybamm.models.full_battery_models.lead_acid
     - pybamm.models.full_battery_models.lithium_ion
-    #- pybamm.models.full_battery_models.lithium_metal (next release)
+    #- pybamm.models.full_battery_models.lithium_metal
     - pybamm.models.submodels
     - pybamm.models.submodels.active_material
     - pybamm.models.submodels.convection
