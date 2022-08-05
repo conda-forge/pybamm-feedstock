@@ -74,11 +74,10 @@ test:
     - pybamm.models.submodels.interface.kinetics.first_order_kinetics
     - pybamm.models.submodels.interface.kinetics.inverse_kinetics
     - pybamm.models.submodels.interface.lithium_plating
+    - pybamm.models.submodels.interface.open_circuit_potential
     - pybamm.models.submodels.interface.sei
     - pybamm.models.submodels.oxygen_diffusion
     - pybamm.models.submodels.particle
-    - pybamm.models.submodels.particle.no_distribution
-    - pybamm.models.submodels.particle.size_distribution
     - pybamm.models.submodels.particle_mechanics
     - pybamm.models.submodels.porosity
     - pybamm.models.submodels.thermal
