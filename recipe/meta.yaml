@@ -35,7 +35,7 @@ requirements:
     - matplotlib-base >=2.0
     - numpy <=1.16
     - pandas >=0.24
-    - pybtex >=0.24.0
+    - pybtex #>=0.24.0
     - python
     - scikit-fem >=0.2.0
     - scipy >=1.3
