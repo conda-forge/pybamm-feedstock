@@ -33,7 +33,7 @@ requirements:
     - julia >=0.5.6  # [not win]
     - jupyter
     - matplotlib-base >=2.0
-    - numpy <=1.22
+    - numpy >=1.16
     - pandas >=0.24
     - pybtex >=0.24.0
     - python
