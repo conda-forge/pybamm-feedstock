@@ -1,5 +1,5 @@
 {% set name = "pybamm" %}
-{% set version = "22.8" %}
+{% set version = "22.9" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 862cc707a87ccf6b4983a0142c4268a8b7a677a77a077fd32b300b8a1a5a76f9
+  sha256: abd411a8fe14ced195611fb9ce67bf07dbb2625e98659bc520145f38d2886b04
 
 build:
   number: 0
@@ -33,7 +33,7 @@ requirements:
     - julia >=0.5.6  # [not win]
     - jupyter
     - matplotlib-base >=2.0
-    - numpy <=1.22
+    - numpy >=1.16
     - pandas >=0.24
     - pybtex >=0.24.0
     - python
