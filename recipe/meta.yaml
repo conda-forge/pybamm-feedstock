@@ -30,7 +30,7 @@ requirements:
     - autograd >=1.2
     - casadi >=3.5.0
     - imageio >=2.9.0
-    - julia >=1.6.3  # [not win]
+    - julia  # [not win]
     - jupyter
     - matplotlib-base >=2.0
     - numpy >=1.16
