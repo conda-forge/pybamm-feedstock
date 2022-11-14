@@ -12,9 +12,6 @@ source:
 build:
   number: 0
   entry_points:
-    - pybamm_edit_parameter = pybamm.parameters_cli:edit_parameter
-    - pybamm_add_parameter = pybamm.parameters_cli:add_parameter
-    - pybamm_rm_parameter = pybamm.parameters_cli:remove_parameter
     - pybamm_install_odes = pybamm.install_odes:main
     - pybamm_install_jax = pybamm.util:install_jax
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
