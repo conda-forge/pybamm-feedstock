@@ -85,9 +85,6 @@ test:
     - pybamm.solvers.c_solvers
     - pybamm.spatial_methods
   commands:
-    - pybamm_edit_parameter --help
-    - pybamm_add_parameter --help
-    - pybamm_rm_parameter --help
     - pybamm_install_odes --help  # [not win]
     - pybamm_install_jax --help
 
