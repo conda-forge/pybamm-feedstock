@@ -1,5 +1,5 @@
 {% set name = "pybamm" %}
-{% set version = "22.9" %}
+{% set version = "22.10.post1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: abd411a8fe14ced195611fb9ce67bf07dbb2625e98659bc520145f38d2886b04
+  sha256: 884152c7f40617b8cf1d04ffec8626f7cde84f5123b03283e850e163da992da2
 
 build:
   number: 0
   entry_points:
-    - pybamm_edit_parameter = pybamm.parameters_cli:edit_parameter
-    - pybamm_add_parameter = pybamm.parameters_cli:add_parameter
-    - pybamm_rm_parameter = pybamm.parameters_cli:remove_parameter
     - pybamm_install_odes = pybamm.install_odes:main
     - pybamm_install_jax = pybamm.util:install_jax
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
@@ -30,7 +27,6 @@ requirements:
     - autograd >=1.2
     - casadi >=3.5.0
     - imageio >=2.9.0
-    - julia >=0.5.6  # [not win]
     - jupyter
     - matplotlib-base >=2.0
     - numpy >=1.16
@@ -89,9 +85,6 @@ test:
     - pybamm.solvers.c_solvers
     - pybamm.spatial_methods
   commands:
-    - pybamm_edit_parameter --help
-    - pybamm_add_parameter --help
-    - pybamm_rm_parameter --help
     - pybamm_install_odes --help  # [not win]
     - pybamm_install_jax --help
 
