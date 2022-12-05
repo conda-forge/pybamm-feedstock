@@ -1,5 +1,5 @@
 {% set name = "pybamm" %}
-{% set version = "22.10.post1" %}
+{% set version = "22.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 884152c7f40617b8cf1d04ffec8626f7cde84f5123b03283e850e163da992da2
+  sha256: e3de7b386823c6c20eafefce9b07aae457095667a0a509df3f1daffbd6f1053e
 
 build:
-  number: 1
+  number: 0
   entry_points:
     - pybamm_install_odes = pybamm.install_odes:main
     - pybamm_install_jax = pybamm.util:install_jax
