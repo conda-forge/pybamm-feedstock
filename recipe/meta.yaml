@@ -1,5 +1,5 @@
 {% set name = "pybamm" %}
-{% set version = "23.4.1" %}
+{% set version = "23.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b1baa38d5291e01c929193824c1529f35ed4fdc3579f721819929a2a0d24ea85
+  sha256: f7a8b1be89b7cad3e08033905b9fb37ca7a4824611ccbcb10cb5b58a1c3f393f
 
 build:
   number: 0
@@ -45,7 +45,7 @@ test:
   imports:
     - pybamm
     - pybamm.discretisations
-    - pybamm.experiments
+    - pybamm.experiment
     - pybamm.expression_tree
     - pybamm.expression_tree.operations
     - pybamm.expression_tree.printing
