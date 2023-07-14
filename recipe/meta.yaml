@@ -45,7 +45,7 @@ test:
   imports:
     - pybamm
     - pybamm.discretisations
-    - pybamm.experiments
+    - pybamm.experiment
     - pybamm.expression_tree
     - pybamm.expression_tree.operations
     - pybamm.expression_tree.printing
