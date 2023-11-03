@@ -1,5 +1,5 @@
 {% set name = "pybamm" %}
-{% set version = "23.5" %}
+{% set version = "23.9" %}
 
 package:
   name: {{ name|lower }}
@@ -15,7 +15,7 @@ build:
     - pybamm_install_odes = pybamm.install_odes:main
     - pybamm_install_jax = pybamm.util:install_jax
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
-  skip: true  # [py<37 or py>=310]
+  skip: true  # [py<38 or py>311]
 
 requirements:
   build:
@@ -53,9 +53,10 @@ test:
     - pybamm.meshes
     - pybamm.models
     - pybamm.models.full_battery_models
+    - pybamm.models.full_battery_models.equivalent_circuit
     - pybamm.models.full_battery_models.lead_acid
     - pybamm.models.full_battery_models.lithium_ion
-    #- pybamm.models.full_battery_models.lithium_metal
+    - pybamm.models.full_battery_models.lithium_metal
     - pybamm.models.submodels
     - pybamm.models.submodels.active_material
     - pybamm.models.submodels.convection
@@ -67,6 +68,7 @@ test:
     - pybamm.models.submodels.electrolyte_conductivity
     - pybamm.models.submodels.electrolyte_conductivity.surface_potential_form
     - pybamm.models.submodels.electrolyte_diffusion
+    - pybamm.models.submodels.equivalent_circuit_elements
     - pybamm.models.submodels.external_circuit
     - pybamm.models.submodels.interface
     - pybamm.models.submodels.interface.interface_utilisation
@@ -87,6 +89,7 @@ test:
     - pybamm.solvers
     - pybamm.solvers.c_solvers
     - pybamm.spatial_methods
+    - pybamm.step
   commands:
     - pybamm_install_odes --help  # [not win]
     - pybamm_install_jax --help
@@ -96,8 +99,8 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  summary: Python Battery Mathematical Modelling.
-  doc_url: https://pybamm.readthedocs.io/en/latest
+  summary: Python Battery Mathemati Modelling.
+  doc_url: https://docs.pybamm.org/en/latest
   dev_url: https://github.com/pybamm-team/PyBaMM
 
 extra:
