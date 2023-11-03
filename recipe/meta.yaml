@@ -99,7 +99,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  summary: Python Battery Mathemati Modelling.
+  summary: Python Battery Mathematical Modelling.
   doc_url: https://docs.pybamm.org/en/latest
   dev_url: https://github.com/pybamm-team/PyBaMM
 
