@@ -11,7 +11,7 @@ Summary: Python Battery Mathematical Modelling.
 
 Development: https://github.com/pybamm-team/PyBaMM
 
-Documentation: https://pybamm.readthedocs.io/en/latest
+Documentation: https://docs.pybamm.org/en/latest
 
 Current build status
 ====================
@@ -253,4 +253,4 @@ Feedstock Maintainers
 * [@priyanshuone6](https://github.com/priyanshuone6/)
 * [@tinosulzer](https://github.com/tinosulzer/)
 * [@tlestang](https://github.com/tlestang/)
-
+* [@agriyakhetarpal](https://github.com/agriyakhetarpal/)
