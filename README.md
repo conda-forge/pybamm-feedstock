@@ -254,3 +254,4 @@ Feedstock Maintainers
 * [@tinosulzer](https://github.com/tinosulzer/)
 * [@tlestang](https://github.com/tlestang/)
 * [@agriyakhetarpal](https://github.com/agriyakhetarpal/)
+* [@Saransh-cpp](https://github.com/Saransh-cpp/)
