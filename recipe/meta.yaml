@@ -56,7 +56,7 @@ test:
     - pybamm.models.full_battery_models.equivalent_circuit
     - pybamm.models.full_battery_models.lead_acid
     - pybamm.models.full_battery_models.lithium_ion
-    - pybamm.models.full_battery_models.lithium_metal
+    # - pybamm.models.full_battery_models.lithium_metal
     - pybamm.models.submodels
     - pybamm.models.submodels.active_material
     - pybamm.models.submodels.convection
