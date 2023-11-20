@@ -26,10 +26,10 @@ requirements:
     - python
     - wheel
   run:
-    - anytree >=2.12.0
+    - anytree >=2.8.0
     - autograd >=1.6.2
     - casadi >=3.6.3
-    - imageio >=2.32.0
+    - imageio >=2.3.0
     - matplotlib-base >=3.6.0
     - numpy >=1.23.5
     - pandas >=1.5.0
