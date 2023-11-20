@@ -26,20 +26,20 @@ requirements:
     - python
     - wheel
   run:
-    - anytree >=2.4.3
-    - autograd >=1.2
-    - casadi >=3.6.0
-    - imageio >=2.9.0
-    - matplotlib-base >=2.0
-    - numpy >=1.16
-    - pandas >=0.24
+    - anytree >=2.12.0
+    - autograd >=1.6.2
+    - casadi >=3.6.3
+    - imageio >=2.32.0
+    - matplotlib-base >=3.6.0
+    - numpy >=1.23.5
+    - pandas >=1.5.0
     - pybtex >=0.24.0
     - python
-    - scikit-fem >=0.2.0
-    - scipy >=1.3
-    - sympy >=1.8
+    - scikit-fem >=8.1.0
+    - scipy >=1.9.3
+    - sympy >=1.12
     - tqdm
-    - xarray
+    - xarray >=2022.6.0
 
 test:
   imports:
