@@ -10,7 +10,7 @@ source:
   sha256: ec50ad58a120f4fe04ec141eafdc3dced693f6f1ad5271c0d6aebd4ac606e7f2
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - pybamm_install_odes = pybamm.install_odes:main
     - pybamm_install_jax = pybamm.util:install_jax
