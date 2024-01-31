@@ -46,6 +46,7 @@ test:
     - pybamm
     - pybamm.discretisations
     - pybamm.experiment
+    - pybamm.experiment.step
     - pybamm.expression_tree
     - pybamm.expression_tree.operations
     - pybamm.expression_tree.printing
@@ -89,7 +90,6 @@ test:
     - pybamm.solvers
     - pybamm.solvers.c_solvers
     - pybamm.spatial_methods
-    - pybamm.step
   commands:
     - pybamm_install_odes --help  # [not win]
     - pybamm_install_jax --help
