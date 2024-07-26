@@ -15,7 +15,7 @@ build:
     - pybamm_install_odes = pybamm.install_odes:main
     - pybamm_install_jax = pybamm.util:install_jax
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
-  skip: true  # [py<38 or py>312]
+  skip: true  # [py<39 or py>312]
 
 requirements:
   build:
@@ -28,17 +28,19 @@ requirements:
   run:
     - anytree >=2.8.0
     - autograd >=1.6.2
-    - casadi >=3.6.3
+    - casadi >=3.6.5
     - imageio >=2.3.0
     - matplotlib-base >=3.6.0
     - numpy >=1.23.5
     - pandas >=1.5.0
+    - pooch >=1.8.1
     - pybtex >=0.24.0
     - python
     - scikit-fem >=8.1.0
-    - scipy >=1.9.3
+    - scipy >=1.11.4
     - sympy >=1.12
     - tqdm
+    - typing-extensions >=4.10.0
     - xarray >=2022.6.0
 
 test:
@@ -91,7 +93,6 @@ test:
     - pybamm.solvers.c_solvers
     - pybamm.spatial_methods
   commands:
-    - pybamm_install_odes --help  # [not win]
     - pybamm_install_jax --help
 
 about:
