@@ -1,5 +1,5 @@
 {% set name = "pybamm" %}
-{% set version = "24.5" %}
+{% set version = "24.9.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3a5caf51a2198a7a1d5470572702bee2dde90a9b1bc2c2674eae9ecbb69d3096
+  sha256: 743dac0d17bd2f773050fe841cf3581658283f886e27795d9f5fd67d1ff563b5
 
 build:
   number: 0
