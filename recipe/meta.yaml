@@ -25,7 +25,7 @@ requirements:
     - setuptools
   run:
     - anytree >=2.8.0
-    - casadi >=3.6.5
+    - casadi >=3.6.6
     - imageio >=2.3.0
     - matplotlib-base >=3.6.0
     - numpy <2
