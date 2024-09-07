@@ -11,9 +11,6 @@ source:
 
 build:
   number: 0
-  entry_points:
-    - pybamm_install_odes = pybamm.install_odes:main
-    - pybamm_install_jax = pybamm.util:install_jax
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
   skip: true  # [py<39 or py>312]
 
@@ -25,6 +22,7 @@ requirements:
     - pip
     - python
     - wheel
+    - setuptools
   run:
     - anytree >=2.8.0
     - casadi >=3.6.5
@@ -91,8 +89,6 @@ test:
     - pybamm.solvers
     - pybamm.solvers.c_solvers
     - pybamm.spatial_methods
-  commands:
-    - pybamm_install_jax --help
 
 about:
   home: https://github.com/pybamm-team/PyBaMM/
