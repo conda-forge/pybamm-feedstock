@@ -1,5 +1,5 @@
 {% set name = "pybamm" %}
-{% set version = "24.5" %}
+{% set version = "24.9.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3a5caf51a2198a7a1d5470572702bee2dde90a9b1bc2c2674eae9ecbb69d3096
+  sha256: 743dac0d17bd2f773050fe841cf3581658283f886e27795d9f5fd67d1ff563b5
 
 build:
   number: 0
-  entry_points:
-    - pybamm_install_odes = pybamm.install_odes:main
-    - pybamm_install_jax = pybamm.util:install_jax
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
   skip: true  # [py<39 or py>312]
 
@@ -25,9 +22,10 @@ requirements:
     - pip
     - python
     - wheel
+    - setuptools
   run:
     - anytree >=2.8.0
-    - casadi >=3.6.5
+    - casadi >=3.6.6
     - imageio >=2.3.0
     - matplotlib-base >=3.6.0
     - numpy <2
@@ -91,8 +89,6 @@ test:
     - pybamm.solvers
     - pybamm.solvers.c_solvers
     - pybamm.spatial_methods
-  commands:
-    - pybamm_install_jax --help
 
 about:
   home: https://github.com/pybamm-team/PyBaMM/
