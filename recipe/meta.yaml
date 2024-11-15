@@ -17,10 +17,10 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.9
+    - python
     - setuptools
   run:
-    - python >=3.9
+    - python
     - anytree >=2.8.0
     - casadi >=3.6.6
     - imageio >=2.3.0
@@ -86,6 +86,10 @@ test:
     - pybamm.solvers
     - pybamm.solvers.c_solvers
     - pybamm.spatial_methods
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
   home: https://github.com/pybamm-team/PyBaMM/
