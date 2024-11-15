@@ -6,24 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 743dac0d17bd2f773050fe841cf3581658283f886e27795d9f5fd67d1ff563b5
 
 build:
-  number: 1
-  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
-  skip: true  # [py<39 or py>312]
+  noarch: python
+  number: 2
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
-  build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
     - pip
-    - python
-    - wheel
+    - python >=3.9
     - setuptools
   run:
+    - python >=3.9
     - anytree >=2.8.0
     - casadi >=3.6.6
     - imageio >=2.3.0
