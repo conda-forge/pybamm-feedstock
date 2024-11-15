@@ -1,6 +1,5 @@
 {% set name = "pybamm" %}
 {% set version = "24.9.0" %}
-{% set python_min = "3.9" %}
 
 package:
   name: {{ name|lower }}
@@ -18,19 +17,18 @@ build:
 requirements:
   host:
     - pip
-    - python {{ python_min }}
+    - python >=3.9,<3.13
     - setuptools >=64
   run:
-    - python >={{ python_min }}
+    - python >=3.9,<3.13
     - anytree >=2.8.0
     - casadi >=3.6.6
     - imageio >=2.3.0
     - matplotlib-base >=3.6.0
-    - numpy <2
+    - numpy >=1.23.5,<2.0.0
     - pandas >=1.5.0
     - pooch >=1.8.1
     - pybtex >=0.24.0
-    - python
     - scikit-fem >=8.1.0
     - scipy >=1.11.4
     - sympy >=1.12
@@ -89,7 +87,7 @@ test:
     - pybamm.spatial_methods
   requires:
     - pip
-    - python {{ python_min }}
+    - python >=3.9,<3.13
   commands:
     - pip check
 
