@@ -1,6 +1,7 @@
 {% set name = "pybamm" %}
 {% set version = "24.9.0" %}
 {% set python_min = "3.9" %}
+{% set python_max = "3.13" %}
 
 package:
   name: {{ name|lower }}
@@ -21,7 +22,7 @@ requirements:
     - python {{ python_min }}
     - setuptools >=64
   run:
-    - python >={{ python_min }}
+    - python >={{ python_min }},<{{ python_max }}
     - anytree >=2.8.0
     - casadi >=3.6.6
     - imageio >=2.3.0
