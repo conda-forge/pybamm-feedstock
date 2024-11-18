@@ -1,38 +1,36 @@
 {% set name = "pybamm" %}
 {% set version = "24.9.0" %}
+{% set python_min = "3.9" %}
+{% set python_max = "3.13" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 743dac0d17bd2f773050fe841cf3581658283f886e27795d9f5fd67d1ff563b5
 
 build:
-  number: 1
-  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
-  skip: true  # [py<39 or py>312]
+  noarch: python
+  number: 2
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
-  build:
-    - python                                 # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
   host:
     - pip
-    - python
-    - wheel
-    - setuptools
+    - python {{ python_min }}
+    - setuptools >=64
   run:
+    - python >={{ python_min }},<{{ python_max }}
     - anytree >=2.8.0
     - casadi >=3.6.6
     - imageio >=2.3.0
     - matplotlib-base >=3.6.0
-    - numpy <2
+    - numpy >=1.23.5,<2.0.0
     - pandas >=1.5.0
     - pooch >=1.8.1
     - pybtex >=0.24.0
-    - python
     - scikit-fem >=8.1.0
     - scipy >=1.11.4
     - sympy >=1.12
@@ -89,6 +87,11 @@ test:
     - pybamm.solvers
     - pybamm.solvers.c_solvers
     - pybamm.spatial_methods
+  requires:
+    - pip
+    - python {{ python_min }}
+  commands:
+    - pip check
 
 about:
   home: https://github.com/pybamm-team/PyBaMM/
