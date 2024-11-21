@@ -1,5 +1,5 @@
 {% set name = "pybamm" %}
-{% set version = "24.9.0" %}
+{% set version = "24.11.0" %}
 {% set python_min = "3.9" %}
 {% set python_max = "3.13" %}
 
@@ -9,11 +9,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 743dac0d17bd2f773050fe841cf3581658283f886e27795d9f5fd67d1ff563b5
+  sha256: 43a44e09fcf96c1b1a25cf14685c8d858a4b0ff0a9c7adb9bf6ef1fca18b7f0d
 
 build:
   noarch: python
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
