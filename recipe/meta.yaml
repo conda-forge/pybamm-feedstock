@@ -24,7 +24,7 @@ requirements:
   run:
     - python >={{ python_min }},<{{ python_max }}
     - anytree >=2.8.0
-    - casadi >=3.6.6
+    - casadi >=3.6.7
     - imageio >=2.3.0
     - matplotlib-base >=3.6.0
     - numpy >=1.23.5,<2.0.0
