@@ -38,6 +38,8 @@ requirements:
     - tqdm
     - typing-extensions >=4.10.0
     - xarray >=2022.6.0
+    - pyyaml
+    - platformdirs
 
 test:
   imports:
