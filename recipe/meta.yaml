@@ -106,24 +106,7 @@ outputs:
         - python {{ python_min }}
         - setuptools >=64
       run:
-        - python >={{ python_min }},<{{ python_max }}
-        - anytree >=2.8.0
-        - casadi >=3.6.7
-        - posthog >=3.6.5
-        - imageio >=2.3.0
-        - matplotlib-base >=3.6.0
-        - numpy >=1.23.5,<2.0.0
-        - pandas >=1.5.0
-        - pooch >=1.8.1
-        - pybtex >=0.24.0
-        - scikit-fem >=8.1.0
-        - scipy >=1.11.4
-        - sympy >=1.12
-        - tqdm
-        - typing-extensions >=4.10.0
-        - xarray >=2022.6.0
-        - pyyaml
-        - platformdirs
+        - {{ pin_subpackage('pybamm-base', exact=True) }}
         # not available on conda-forge
         # - bpx
         - jax ==0.4.27
