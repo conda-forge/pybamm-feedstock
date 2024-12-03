@@ -100,10 +100,6 @@ outputs:
       noarch: python
 
     requirements:
-      host:
-        - pip
-        - python {{ python_min }}
-        - setuptools >=64
       run:
         - {{ pin_subpackage('pybamm-base', exact=True) }}
         # not available on conda-forge
