@@ -124,7 +124,8 @@ outputs:
         - xarray >=2022.6.0
         - pyyaml
         - platformdirs
-        - bpx
+        # not available on conda-forge
+        # - bpx
         - jax ==0.4.27
         - jaxlib==0.4.27
         - scikit-fem>=8.1.0
