@@ -98,7 +98,6 @@ outputs:
   - name: pybamm
     build:
       noarch: python
-      script: python -m pip install . -vv --no-deps --no-build-isolation
 
     requirements:
       host:
