@@ -12,89 +12,177 @@ source:
   sha256: 5ce20c13d61c4dc9f142381a38f38d60e778c167d2683003688cefa754ba9e12
 
 build:
-  noarch: python
   number: 0
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
-requirements:
-  host:
-    - pip
-    - python {{ python_min }}
-    - setuptools >=64
-  run:
-    - python >={{ python_min }},<{{ python_max }}
-    - anytree >=2.8.0
-    - casadi >=3.6.7
-    - posthog >=3.6.5
-    - imageio >=2.3.0
-    - matplotlib-base >=3.6.0
-    - numpy >=1.23.5,<2.0.0
-    - pandas >=1.5.0
-    - pooch >=1.8.1
-    - pybtex >=0.24.0
-    - scikit-fem >=8.1.0
-    - scipy >=1.11.4
-    - sympy >=1.12
-    - tqdm
-    - typing-extensions >=4.10.0
-    - xarray >=2022.6.0
-    - pyyaml
-    - platformdirs
+outputs:
+  - name: pybamm-base
+    build:
+      noarch: python
+      script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
-test:
-  imports:
-    - pybamm
-    - pybamm.discretisations
-    - pybamm.experiment
-    - pybamm.experiment.step
-    - pybamm.expression_tree
-    - pybamm.expression_tree.operations
-    - pybamm.expression_tree.printing
-    - pybamm.geometry
-    - pybamm.meshes
-    - pybamm.models
-    - pybamm.models.full_battery_models
-    - pybamm.models.full_battery_models.equivalent_circuit
-    - pybamm.models.full_battery_models.lead_acid
-    - pybamm.models.full_battery_models.lithium_ion
-    # - pybamm.models.full_battery_models.lithium_metal
-    - pybamm.models.submodels
-    - pybamm.models.submodels.active_material
-    - pybamm.models.submodels.convection
-    - pybamm.models.submodels.convection.through_cell
-    - pybamm.models.submodels.convection.transverse
-    - pybamm.models.submodels.current_collector
-    - pybamm.models.submodels.electrode
-    - pybamm.models.submodels.electrode.ohm
-    - pybamm.models.submodels.electrolyte_conductivity
-    - pybamm.models.submodels.electrolyte_conductivity.surface_potential_form
-    - pybamm.models.submodels.electrolyte_diffusion
-    - pybamm.models.submodels.equivalent_circuit_elements
-    - pybamm.models.submodels.external_circuit
-    - pybamm.models.submodels.interface
-    - pybamm.models.submodels.interface.interface_utilisation
-    - pybamm.models.submodels.interface.kinetics
-    - pybamm.models.submodels.interface.kinetics.inverse_kinetics
-    - pybamm.models.submodels.interface.lithium_plating
-    - pybamm.models.submodels.interface.open_circuit_potential
-    - pybamm.models.submodels.interface.sei
-    - pybamm.models.submodels.oxygen_diffusion
-    - pybamm.models.submodels.particle
-    - pybamm.models.submodels.particle_mechanics
-    - pybamm.models.submodels.porosity
-    - pybamm.models.submodels.thermal
-    - pybamm.models.submodels.thermal.pouch_cell
-    - pybamm.models.submodels.transport_efficiency
-    - pybamm.parameters
-    - pybamm.plotting
-    - pybamm.solvers
-    - pybamm.solvers.c_solvers
-    - pybamm.spatial_methods
-  requires:
-    - pip
-    - python {{ python_min }}
-  commands:
-    - pip check
+    requirements:
+      host:
+        - pip
+        - python {{ python_min }}
+        - setuptools >=64
+      run:
+        - python >={{ python_min }},<{{ python_max }}
+        - anytree >=2.8.0
+        - casadi >=3.6.7
+        - posthog >=3.6.5
+        - numpy >=1.23.5,<2.0.0
+        - pandas >=1.5.0
+        - pooch >=1.8.1
+        - scipy >=1.11.4
+        - sympy >=1.12
+        - typing-extensions >=4.10.0
+        - xarray >=2022.6.0
+        - pyyaml
+        - platformdirs
+
+    test:
+      imports:
+        - pybamm
+        - pybamm.discretisations
+        - pybamm.experiment
+        - pybamm.experiment.step
+        - pybamm.expression_tree
+        - pybamm.expression_tree.operations
+        - pybamm.expression_tree.printing
+        - pybamm.geometry
+        - pybamm.meshes
+        - pybamm.models
+        - pybamm.models.full_battery_models
+        - pybamm.models.full_battery_models.equivalent_circuit
+        - pybamm.models.full_battery_models.lead_acid
+        - pybamm.models.full_battery_models.lithium_ion
+        # - pybamm.models.full_battery_models.lithium_metal
+        - pybamm.models.submodels
+        - pybamm.models.submodels.active_material
+        - pybamm.models.submodels.convection
+        - pybamm.models.submodels.convection.through_cell
+        - pybamm.models.submodels.convection.transverse
+        - pybamm.models.submodels.current_collector
+        - pybamm.models.submodels.electrode
+        - pybamm.models.submodels.electrode.ohm
+        - pybamm.models.submodels.electrolyte_conductivity
+        - pybamm.models.submodels.electrolyte_conductivity.surface_potential_form
+        - pybamm.models.submodels.electrolyte_diffusion
+        - pybamm.models.submodels.equivalent_circuit_elements
+        - pybamm.models.submodels.external_circuit
+        - pybamm.models.submodels.interface
+        - pybamm.models.submodels.interface.interface_utilisation
+        - pybamm.models.submodels.interface.kinetics
+        - pybamm.models.submodels.interface.kinetics.inverse_kinetics
+        - pybamm.models.submodels.interface.lithium_plating
+        - pybamm.models.submodels.interface.open_circuit_potential
+        - pybamm.models.submodels.interface.sei
+        - pybamm.models.submodels.oxygen_diffusion
+        - pybamm.models.submodels.particle
+        - pybamm.models.submodels.particle_mechanics
+        - pybamm.models.submodels.porosity
+        - pybamm.models.submodels.thermal
+        - pybamm.models.submodels.thermal.pouch_cell
+        - pybamm.models.submodels.transport_efficiency
+        - pybamm.parameters
+        - pybamm.plotting
+        - pybamm.solvers
+        - pybamm.solvers.c_solvers
+        - pybamm.spatial_methods
+      requires:
+        - pip
+        - python {{ python_min }}
+      commands:
+        - pip check
+
+  - name: pybamm
+    build:
+      noarch: python
+      script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+    requirements:
+      host:
+        - pip
+        - python {{ python_min }}
+        - setuptools >=64
+    run:
+      - python >={{ python_min }},<{{ python_max }}
+      - anytree >=2.8.0
+      - casadi >=3.6.7
+      - posthog >=3.6.5
+      - imageio >=2.3.0
+      - matplotlib-base >=3.6.0
+      - numpy >=1.23.5,<2.0.0
+      - pandas >=1.5.0
+      - pooch >=1.8.1
+      - pybtex >=0.24.0
+      - scikit-fem >=8.1.0
+      - scipy >=1.11.4
+      - sympy >=1.12
+      - tqdm
+      - typing-extensions >=4.10.0
+      - xarray >=2022.6.0
+      - pyyaml
+      - platformdirs
+      - bpx
+      - jax ==0.4.27
+      - jaxlib==0.4.27
+      - scikit-fem>=8.1.0
+
+    test:
+      imports:
+        - pybamm
+        - pybamm.discretisations
+        - pybamm.experiment
+        - pybamm.experiment.step
+        - pybamm.expression_tree
+        - pybamm.expression_tree.operations
+        - pybamm.expression_tree.printing
+        - pybamm.geometry
+        - pybamm.meshes
+        - pybamm.models
+        - pybamm.models.full_battery_models
+        - pybamm.models.full_battery_models.equivalent_circuit
+        - pybamm.models.full_battery_models.lead_acid
+        - pybamm.models.full_battery_models.lithium_ion
+        # - pybamm.models.full_battery_models.lithium_metal
+        - pybamm.models.submodels
+        - pybamm.models.submodels.active_material
+        - pybamm.models.submodels.convection
+        - pybamm.models.submodels.convection.through_cell
+        - pybamm.models.submodels.convection.transverse
+        - pybamm.models.submodels.current_collector
+        - pybamm.models.submodels.electrode
+        - pybamm.models.submodels.electrode.ohm
+        - pybamm.models.submodels.electrolyte_conductivity
+        - pybamm.models.submodels.electrolyte_conductivity.surface_potential_form
+        - pybamm.models.submodels.electrolyte_diffusion
+        - pybamm.models.submodels.equivalent_circuit_elements
+        - pybamm.models.submodels.external_circuit
+        - pybamm.models.submodels.interface
+        - pybamm.models.submodels.interface.interface_utilisation
+        - pybamm.models.submodels.interface.kinetics
+        - pybamm.models.submodels.interface.kinetics.inverse_kinetics
+        - pybamm.models.submodels.interface.lithium_plating
+        - pybamm.models.submodels.interface.open_circuit_potential
+        - pybamm.models.submodels.interface.sei
+        - pybamm.models.submodels.oxygen_diffusion
+        - pybamm.models.submodels.particle
+        - pybamm.models.submodels.particle_mechanics
+        - pybamm.models.submodels.porosity
+        - pybamm.models.submodels.thermal
+        - pybamm.models.submodels.thermal.pouch_cell
+        - pybamm.models.submodels.transport_efficiency
+        - pybamm.parameters
+        - pybamm.plotting
+        - pybamm.solvers
+        - pybamm.solvers.c_solvers
+        - pybamm.spatial_methods
+      requires:
+        - pip
+        - python {{ python_min }}
+      commands:
+        - pip check
 
 about:
   home: https://github.com/pybamm-team/PyBaMM/
