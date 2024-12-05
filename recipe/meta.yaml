@@ -102,8 +102,7 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage('pybamm-base', exact=True) }}
-        # not available on conda-forge
-        # - bpx
+        - bpx
         - jax 0.4.27
         - jaxlib 0.4.27
         - scikit-fem>=8.1.0
