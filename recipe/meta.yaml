@@ -108,7 +108,7 @@ outputs:
         - tqdm
         # Plotting
         - imageio >=2.3.0
-        - matplotlib >=3.6.0
+        - matplotlib-base >=3.6.0
         # Cite
         - pybtex >=0.24.0
         # JAX
