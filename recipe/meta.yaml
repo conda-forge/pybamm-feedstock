@@ -25,6 +25,8 @@ outputs:
         - pip
         - python {{ python_min }}
         - setuptools >=64
+        # See https://github.com/conda-forge/pybamm-feedstock/pull/70/files#r1876438836
+        # - wheel
       run:
         - python >={{ python_min }},<{{ python_max }}
         - anytree >=2.8.0
