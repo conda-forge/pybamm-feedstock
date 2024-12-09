@@ -102,10 +102,22 @@ outputs:
     requirements:
       run:
         - {{ pin_subpackage('pybamm-base', exact=True) }}
+        # Battery Parameter eXchange format
         - bpx
+        # Progress bars
+        - tqdm
+        # Plotting
+        - imageio >=2.3.0
+        - matplotlib >=3.6.0
+        # Cite
+        - pybtex >=0.24.0
+        # JAX
         - jax 0.4.27
         - jaxlib 0.4.27
-        - scikit-fem>=8.1.0
+        # Other dependencies
+        - scikit-fem >=8.1.0
+        # - iree-compiler -- not available on conda
+        # - jupyter -- not required
 
     test:
       imports:
