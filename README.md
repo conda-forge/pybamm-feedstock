@@ -44,32 +44,28 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `pybamm` and `pybamm-base` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `pybamm, pybamm-base` can be installed with `conda`:
 
 ```
-conda install pybamm
-conda install pybamm-base
+conda install pybamm pybamm-base
 ```
 
 or with `mamba`:
 
 ```
-mamba install pybamm
-mamba install pybamm-base
+mamba install pybamm pybamm-base
 ```
 
 It is possible to list all of the versions of `pybamm` available on your platform with `conda`:
 
 ```
 conda search pybamm --channel conda-forge
-conda search pybamm-base --channel conda-forge
 ```
 
 or with `mamba`:
 
 ```
 mamba search pybamm --channel conda-forge
-mamba search pybamm-base --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
@@ -77,15 +73,12 @@ Alternatively, `mamba repoquery` may provide more information:
 ```
 # Search all versions available on your platform:
 mamba repoquery search pybamm --channel conda-forge
-mamba repoquery search pybamm-base --channel conda-forge
 
 # List packages depending on `pybamm`:
 mamba repoquery whoneeds pybamm --channel conda-forge
-mamba repoquery whoneeds pybamm-base --channel conda-forge
 
 # List dependencies of `pybamm`:
 mamba repoquery depends pybamm --channel conda-forge
-mamba repoquery depends pybamm-base --channel conda-forge
 ```
 
 
