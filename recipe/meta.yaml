@@ -12,7 +12,7 @@ source:
   sha256: 5ce20c13d61c4dc9f142381a38f38d60e778c167d2683003688cefa754ba9e12
 
 build:
-  number: 1
+  number: 2
 
 outputs:
   - name: pybamm-base

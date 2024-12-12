@@ -32,6 +32,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pybamm-green.svg)](https://anaconda.org/conda-forge/pybamm) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pybamm.svg)](https://anaconda.org/conda-forge/pybamm) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pybamm.svg)](https://anaconda.org/conda-forge/pybamm) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pybamm.svg)](https://anaconda.org/conda-forge/pybamm) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pybamm--base-green.svg)](https://anaconda.org/conda-forge/pybamm-base) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pybamm-base.svg)](https://anaconda.org/conda-forge/pybamm-base) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pybamm-base.svg)](https://anaconda.org/conda-forge/pybamm-base) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pybamm-base.svg)](https://anaconda.org/conda-forge/pybamm-base) |
 
 Installing pybamm
 =================
@@ -43,16 +44,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `pybamm` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `pybamm, pybamm-base` can be installed with `conda`:
 
 ```
-conda install pybamm
+conda install pybamm pybamm-base
 ```
 
 or with `mamba`:
 
 ```
-mamba install pybamm
+mamba install pybamm pybamm-base
 ```
 
 It is possible to list all of the versions of `pybamm` available on your platform with `conda`:
