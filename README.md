@@ -32,6 +32,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-pybamm-green.svg)](https://anaconda.org/conda-forge/pybamm) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pybamm.svg)](https://anaconda.org/conda-forge/pybamm) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pybamm.svg)](https://anaconda.org/conda-forge/pybamm) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pybamm.svg)](https://anaconda.org/conda-forge/pybamm) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-pybamm--base-green.svg)](https://anaconda.org/conda-forge/pybamm-base) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/pybamm-base.svg)](https://anaconda.org/conda-forge/pybamm-base) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/pybamm-base.svg)](https://anaconda.org/conda-forge/pybamm-base) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/pybamm-base.svg)](https://anaconda.org/conda-forge/pybamm-base) |
 
 Installing pybamm
 =================
@@ -43,28 +44,32 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `pybamm` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `pybamm` and `pybamm-base` can be installed with `conda`:
 
 ```
 conda install pybamm
+conda install pybamm-base
 ```
 
 or with `mamba`:
 
 ```
 mamba install pybamm
+mamba install pybamm-base
 ```
 
 It is possible to list all of the versions of `pybamm` available on your platform with `conda`:
 
 ```
 conda search pybamm --channel conda-forge
+conda search pybamm-base --channel conda-forge
 ```
 
 or with `mamba`:
 
 ```
 mamba search pybamm --channel conda-forge
+mamba search pybamm-base --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
@@ -72,12 +77,15 @@ Alternatively, `mamba repoquery` may provide more information:
 ```
 # Search all versions available on your platform:
 mamba repoquery search pybamm --channel conda-forge
+mamba repoquery search pybamm-base --channel conda-forge
 
 # List packages depending on `pybamm`:
 mamba repoquery whoneeds pybamm --channel conda-forge
+mamba repoquery whoneeds pybamm-base --channel conda-forge
 
 # List dependencies of `pybamm`:
 mamba repoquery depends pybamm --channel conda-forge
+mamba repoquery depends pybamm-base --channel conda-forge
 ```
 
 
