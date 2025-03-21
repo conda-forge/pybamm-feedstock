@@ -99,7 +99,7 @@ outputs:
             - pybamm.spatial_methods
       - requirements:
           run:
-            - python
+            - python ${{ python_min }}.*
             - pip
         script:
           - pip check
@@ -110,6 +110,10 @@ outputs:
       noarch: python
 
     requirements:
+      host:
+        - pip
+        - python ${{ python_min }}.*
+        - setuptools >=64
       run:
         - ${{ pin_subpackage('pybamm-base', exact=True) }}
         # Battery Parameter eXchange format
@@ -181,7 +185,7 @@ outputs:
             - pybamm.spatial_methods
       - requirements:
           run:
-            - python
+            - python ${{ python_min }}.*
             - pip
         script:
           - pip check
