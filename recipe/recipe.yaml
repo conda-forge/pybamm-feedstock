@@ -130,7 +130,6 @@ outputs:
         - matplotlib-base >=3.6.0
         # Cite
         - pybtex >=0.25.0
-        # JAX
         - if: match(python, ">=3.11")
           then: jax >=0.7.0,<0.9.0
         # Other dependencies
