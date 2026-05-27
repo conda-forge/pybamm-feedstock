@@ -31,6 +31,7 @@ outputs:
       run:
         - python >=${{ python_min }}
         - posthog
+        - anytree >=2.8.0
         - black
         - numpy
         - pandas >=1.5.0
