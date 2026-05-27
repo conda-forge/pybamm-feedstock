@@ -2,9 +2,7 @@ schema_version: 1
 
 context:
   name: pybamm
-  version: 24.11.2
-  python_min: 3.9
-  python_max: 3.13
+  version: "26.5.0"
 
 recipe:
   name: ${{ name|lower }}
@@ -12,10 +10,10 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: 5ce20c13d61c4dc9f142381a38f38d60e778c167d2683003688cefa754ba9e12
+  sha256: 8b1fe25c5a6f67e9d6782194a73fdc272f196eadbf717d9f56f49b1464231843
 
 build:
-  number: 3
+  number: 0
 
 outputs:
   - package:
@@ -28,35 +26,39 @@ outputs:
       host:
         - pip
         - python ${{ python_min }}.*
-        - setuptools >=64
-        # See https://github.com/conda-forge/pybamm-feedstock/pull/70/files#r1876438836
-        # - wheel
+        - hatchling >=1.13.0
+        - hatch-vcs >=0.3.0
       run:
-        - python >=${{ python_min }},<${{ python_max }}
+        - python >=${{ python_min }}
+        - posthog
         - anytree >=2.8.0
-        - casadi >=3.6.7
-        - posthog >=3.6.5
-        - numpy >=1.23.5,<2.0.0
+        - black
+        - numpy
         - pandas >=1.5.0
-        - pooch >=1.8.1
         - scipy >=1.11.4
         - sympy >=1.12
         - typing-extensions >=4.10.0
         - xarray >=2022.6.0
+        - pooch
         - pyyaml
         - platformdirs
-
+        - pybammsolvers >=0.8.0,<0.9.0
     tests:
       - python:
           imports:
             - pybamm
+            - pybamm.codegen
             - pybamm.discretisations
+            - pybamm.dispatch
             - pybamm.experiment
             - pybamm.experiment.step
+            - pybamm.experiment.experiment
             - pybamm.expression_tree
             - pybamm.expression_tree.operations
             - pybamm.expression_tree.printing
             - pybamm.geometry
+            - pybamm.input
+            - pybamm.input.parameters
             - pybamm.meshes
             - pybamm.models
             - pybamm.models.full_battery_models
@@ -65,6 +67,7 @@ outputs:
             - pybamm.models.full_battery_models.lithium_ion
             # See https://github.com/pybamm-team/PyBaMM/issues/1905
             # - pybamm.models.full_battery_models.lithium_metal
+            - pybamm.models.full_battery_models.sodium_ion
             - pybamm.models.submodels
             - pybamm.models.submodels.active_material
             - pybamm.models.submodels.convection
@@ -91,11 +94,12 @@ outputs:
             - pybamm.models.submodels.porosity
             - pybamm.models.submodels.thermal
             - pybamm.models.submodels.thermal.pouch_cell
+            - pybamm.models.submodels.thermal.surface
             - pybamm.models.submodels.transport_efficiency
             - pybamm.parameters
             - pybamm.plotting
+            - pybamm.simulation
             - pybamm.solvers
-            - pybamm.solvers.c_solvers
             - pybamm.spatial_methods
       - requirements:
           run:
@@ -113,36 +117,39 @@ outputs:
       host:
         - pip
         - python ${{ python_min }}.*
-        - setuptools >=64
+        - hatchling >=1.13.0
+        - hatch-vcs >=0.3.0
       run:
         - ${{ pin_subpackage('pybamm-base', exact=True) }}
+        - python >=${{ python_min }}
         # Battery Parameter eXchange format
-        - bpx
+        - bpx >=1.1.0,<1.2.0
         # Progress bars
         - tqdm
         # Plotting
-        - imageio >=2.3.0
         - matplotlib-base >=3.6.0
         # Cite
-        - pybtex >=0.24.0
-        # JAX
-        - jax ==0.4.27
-        - jaxlib ==0.4.27
+        - pybtex >=0.25.0
         # Other dependencies
         - scikit-fem >=8.1.0
-        # - iree-compiler -- not available on conda
+        - meshio >=5.3.0
 
     tests:
       - python:
           imports:
             - pybamm
+            - pybamm.codegen
             - pybamm.discretisations
+            - pybamm.dispatch
             - pybamm.experiment
             - pybamm.experiment.step
+            - pybamm.experiment.experiment
             - pybamm.expression_tree
             - pybamm.expression_tree.operations
             - pybamm.expression_tree.printing
             - pybamm.geometry
+            - pybamm.input
+            - pybamm.input.parameters
             - pybamm.meshes
             - pybamm.models
             - pybamm.models.full_battery_models
@@ -151,6 +158,7 @@ outputs:
             - pybamm.models.full_battery_models.lithium_ion
             # See https://github.com/pybamm-team/PyBaMM/issues/1905
             # - pybamm.models.full_battery_models.lithium_metal
+            - pybamm.models.full_battery_models.sodium_ion
             - pybamm.models.submodels
             - pybamm.models.submodels.active_material
             - pybamm.models.submodels.convection
@@ -177,11 +185,12 @@ outputs:
             - pybamm.models.submodels.porosity
             - pybamm.models.submodels.thermal
             - pybamm.models.submodels.thermal.pouch_cell
+            - pybamm.models.submodels.thermal.surface
             - pybamm.models.submodels.transport_efficiency
             - pybamm.parameters
             - pybamm.plotting
+            - pybamm.simulation
             - pybamm.solvers
-            - pybamm.solvers.c_solvers
             - pybamm.spatial_methods
       - requirements:
           run:
