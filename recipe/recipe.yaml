@@ -117,7 +117,8 @@ outputs:
       host:
         - pip
         - python ${{ python_min }}.*
-        - setuptools >=64
+        - hatchling >=1.13.0
+        - hatch-vcs >=0.3.0
       run:
         - ${{ pin_subpackage('pybamm-base', exact=True) }}
         - python >=${{ python_min }}
