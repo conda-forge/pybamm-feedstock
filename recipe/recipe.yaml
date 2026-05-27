@@ -118,6 +118,7 @@ outputs:
         - setuptools >=64
       run:
         - ${{ pin_subpackage('pybamm-base', exact=True) }}
+        - python >=${{ python_min }}
         # Battery Parameter eXchange format
         - bpx >=1.1.0,<1.2.0
         # Progress bars
