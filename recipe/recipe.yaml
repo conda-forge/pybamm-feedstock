@@ -150,7 +150,7 @@ outputs:
             - pybamm.expression_tree.printing
             - pybamm.geometry
             - pybamm.input
-            - pybamm.inpu.parameters
+            - pybamm.input.parameters
             - pybamm.meshes
             - pybamm.models
             - pybamm.models.full_battery_models
