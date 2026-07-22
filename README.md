@@ -147,7 +147,6 @@ Feedstock Maintainers
 
 * [@Saransh-cpp](https://github.com/Saransh-cpp/)
 * [@agriyakhetarpal](https://github.com/agriyakhetarpal/)
-* [@priyanshuone6](https://github.com/priyanshuone6/)
 * [@tlestang](https://github.com/tlestang/)
 * [@valentinsulzer](https://github.com/valentinsulzer/)
 
