@@ -33,7 +33,7 @@ outputs:
         - posthog
         - anytree >=2.8.0
         - black
-        - numpy
+        - numpy >=2.0.0
         - pandas >=1.5.0
         - scipy >=1.11.4
         - sympy >=1.12
@@ -42,7 +42,7 @@ outputs:
         - pooch
         - pyyaml
         - platformdirs
-        - pybammsolvers >=0.8.0,<0.9.0
+        - pybammsolvers >=0.9.0,<0.10.0
     tests:
       - python:
           imports:
@@ -210,5 +210,4 @@ extra:
     - valentinsulzer
     - Saransh-cpp
     - agriyakhetarpal
-    - priyanshuone6
     - tlestang
