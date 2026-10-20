@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pybamm
-  version: "26.8.0.0"
+  version: "26.10.1.1"
 
 recipe:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: c67dbffbe93e650fbbeb775de7ae2796e4cad4917638f6eca9d7299a1ea05f16
+  sha256: f7a2b2d48abb5089d50175fb5aaea67737bf057d42a562b67ed894e83d0abad7
 
 build:
   number: 0
